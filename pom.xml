@@ -11,9 +11,11 @@
 
   <properties>
     <gwt.version>2.2.0</gwt.version>
+    <gae.version>1.4.2</gae.version>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
@@ -68,6 +70,21 @@
         </configuration>
       </plugin>
 
+            <plugin>
+                <groupId>net.kindleit</groupId>
+                <artifactId>maven-gae-plugin</artifactId>
+                <version>0.8.2</version>
+                <dependencies>
+                  <dependency>
+                    <groupId>net.kindleit</groupId>
+                    <artifactId>gae-runtime</artifactId>
+                    <version>${gae.version}</version>
+                    <type>pom</type>
+                  </dependency>
+                </dependencies>
+            </plugin>
+
+
       <!-- Copy static web files before executing gwt:run -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -83,6 +100,21 @@
         </executions>
         <configuration>
           <webappDirectory>${webappDirectory}</webappDirectory>
+          <!-- <warSourceDirectory>${project.basedir}/src/main/webapp</warSourceDirectory>  -->
+          <webResources>
+			<resource>
+				<!-- Il faut prefixer par basedir sinon le chemin est relatif au pom 
+					parent -->
+				<directory>${project.basedir}/src/main/webapp</directory>
+				<excludes>
+					<exclude>template</exclude>
+				</excludes>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/appengine-web.xml</include>
+				</includes>
+			</resource>
+		</webResources>
         </configuration>
       </plugin>
 
