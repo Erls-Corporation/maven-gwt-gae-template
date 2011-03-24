@@ -2,21 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!-- POM file generated with GWT webAppCreator -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jverrecchia</groupId>
   <artifactId>template</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>GWT Maven Archetype</name>
+  <name>Maven GWT GAE Template</name>
 
   <properties>
-    <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.1.0</gwtVersion>
-    
-    <!-- GWT needs at least java 1.5 -->
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
+    <gwt.version>2.2.0</gwt.version>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
   </properties>
 
@@ -24,25 +20,24 @@
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
-      <version>2.2.0</version>
+      <version>${gwt.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
-      <version>2.2.0</version>
+      <version>${gwt.version}</version>
       <scope>provided</scope>
     </dependency>  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.7</version>
+      <version>4.8.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
-    <!-- Generate compiled stuff in the folder used for developing mode -->
     <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 
     <plugins>
