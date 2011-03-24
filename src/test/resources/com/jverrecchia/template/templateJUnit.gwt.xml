@@ -2,7 +2,7 @@
 <module>
   <!-- Inherit our applications main module.                      -->
   <inherits name='com.jverrecchia.template.template'/>
-
+  
   <!-- Specify the path to any remote services.                   -->
   <servlet path="/template/greet" class="com.jverrecchia.template.server.GreetingServiceImpl" />
 
