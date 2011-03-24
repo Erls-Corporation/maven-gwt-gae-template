@@ -2,7 +2,10 @@ package com.jverrecchia.template.server;
 
 import com.jverrecchia.template.client.GreetingService;
 import com.jverrecchia.template.shared.FieldVerifier;
+import com.jverrecchia.template.shared.User;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.googlecode.objectify.Objectify;
+import com.googlecode.objectify.ObjectifyService;
 
 /**
  * The server side implementation of the RPC service.
@@ -27,6 +30,13 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
     input = escapeHtml(input);
     userAgent = escapeHtml(userAgent);
 
+    User user = new User();
+    user.name = "Jonathan";
+    
+    ObjectifyService.register(User.class);
+    Objectify ofy = ObjectifyService.begin();
+    ofy.put(user);
+    
     return "Hello, " + input + "!<br><br>I am running " + serverInfo
         + ".<br><br>It looks like you are using:<br>" + userAgent;
   }
