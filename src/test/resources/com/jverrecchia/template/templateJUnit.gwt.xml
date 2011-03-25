@@ -4,6 +4,6 @@
   <inherits name='com.jverrecchia.template.template'/>
   
   <!-- Specify the path to any remote services.                   -->
-  <servlet path="/template/greet" class="com.jverrecchia.template.server.GreetingServiceImpl" />
+  <servlet path="/template/user" class="com.jverrecchia.template.server.TemplateServiceImpl" />
 
 </module>

@@ -3,13 +3,12 @@ package com.jverrecchia.template.server;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jverrecchia.template.client.TemplateService;
-import com.jverrecchia.template.shared.User;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.Query;
+import com.jverrecchia.template.client.TemplateService;
+import com.jverrecchia.template.shared.User;
 
 @SuppressWarnings("serial")
 public class TemplateServiceImpl extends RemoteServiceServlet implements

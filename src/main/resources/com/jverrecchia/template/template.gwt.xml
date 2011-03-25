@@ -4,8 +4,15 @@
   <inherits name='com.google.gwt.user.User'/>
   <inherits name='com.google.gwt.user.theme.standard.Standard'/>
   <inherits name="com.googlecode.objectify.Objectify" />
+
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
   
-  <entry-point class='com.jverrecchia.template.client.template'/>
+  <entry-point class='com.jverrecchia.template.client.Template'/>
+  
+  <replace-with class="com.jverrecchia.template.client.ClientFactoryImpl">
+    <when-type-is class="com.jverrecchia.template.client.ClientFactory"/>
+  </replace-with>  
   
   <source path='client'/>
   <source path='shared'/>
