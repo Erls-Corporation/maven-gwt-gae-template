@@ -1,8 +1,11 @@
 package com.jverrecchia.template.shared;
 
+import java.io.Serializable;
+
 import javax.persistence.Id;
 
-public class User {
+@SuppressWarnings("serial")
+public class User implements Serializable{
 
 	@Id Long id;
 	private String name;
