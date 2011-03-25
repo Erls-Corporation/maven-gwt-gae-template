@@ -31,7 +31,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
     userAgent = escapeHtml(userAgent);
 
     User user = new User();
-    user.name = "Jonathan";
+    user.setName("Jonathan");
     
     ObjectifyService.register(User.class);
     Objectify ofy = ObjectifyService.begin();
