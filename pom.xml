@@ -12,6 +12,7 @@
   <properties>
     <gwt.version>2.2.0</gwt.version>
     <gae.version>1.4.2</gae.version>
+    <appEngineSdk>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/</appEngineSdk>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
@@ -140,6 +141,7 @@
           <runTarget>template.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
            <appEngineVersion>1.4.2</appEngineVersion> 
+           <appEngineHome>${appEngineSdk}</appEngineHome>
            <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
           <i18nMessagesBundle>com.jverrecchia.template.client.Messages</i18nMessagesBundle>
         </configuration>
